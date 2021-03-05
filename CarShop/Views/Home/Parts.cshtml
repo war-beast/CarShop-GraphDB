@@ -1,0 +1,31 @@
+﻿@model IReadOnlyList<SparePart>
+@{
+	ViewData["Title"] = "Список запчастей";
+}
+
+<div class="text-center">
+	<h1 class="display-4">Запчасти россыпью</h1>
+	<div class="container-fluid">
+		<div class="row">
+			<table class="table table-striped">
+				<thead>
+				<tr>
+					<th>Наименование</th>
+					<th>Цена</th>
+					<th>В составе блока</th>
+				</tr>
+				</thead>
+				<tbody>
+				@foreach (var part in Model)
+				{
+					<tr>
+						<td><div class="text-left">@part.Name</div></td>
+						<td><div class="text-left">@part.Price</div></td>
+						<td><div class="text-left">@part.Block.Name</div></td>
+					</tr>
+				}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

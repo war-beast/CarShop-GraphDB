@@ -1,0 +1,38 @@
+﻿@model IReadOnlyList<Block>
+@{
+    ViewData["Title"] = "Пример использования графовой СУБД: Каталог автозапчастей.";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Пример использования графовой СУБД: Neo4j</h1>
+	<div class="container-fluid">
+		<div class="row">
+			<table class="table table-striped">
+				<thead>
+				<tr>
+					<th>Наименование</th>
+					<th>Запчасти</th>
+				</tr>
+				</thead>
+				<tbody>
+				@foreach (var block in Model)
+				{
+					<tr>
+						<td><div class="text-left">@block.Name</div></td>
+						<td>
+							<ul>
+								@foreach (var part in block.Parts)
+								{
+									<li>
+										@part.Name - $@part.Price
+									</li>
+								}
+							</ul>
+						</td>
+					</tr>
+				}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
