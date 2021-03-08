@@ -9,7 +9,6 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
-		<PackageReference Include="Neo4j.Driver.Simple" Version="4.2.0" />
 		<PackageReference Include="Neo4jClient" Version="4.1.5" />
 		<PackageReference Include="Neo4jClient.Extension" Version="1.0.2" />
 	</ItemGroup>
