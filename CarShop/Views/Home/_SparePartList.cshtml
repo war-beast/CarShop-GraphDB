@@ -1,6 +1,7 @@
-﻿@model IReadOnlyList<SparePart>
+﻿@model PartsSeparatedListViewModel
 
 <div class="table-responsive">
+	<h2 class="h2">Запчасти из блока @Model.BlockName</h2>
 	<table class="table">
 		<tr>
 			<th>
@@ -10,14 +11,14 @@
 				Цена
 			</th>
 		</tr>
-		@foreach (var item in Model)
+		@foreach (var item in Model.SpareParts)
 		{
 			<tr>
 				<td>
 					@item.Name
 				</td>
 				<td>
-					@item.Price
+					$ @item.Price
 				</td>
 			</tr>
 		}
