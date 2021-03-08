@@ -1,0 +1,1484 @@
+﻿[
+	{
+		"p": {
+			"start": {
+				"identity": 24,
+				"labels": [
+					"Block"
+				],
+				"properties": {
+					"name": "Electrika",
+					"Name": "Electrika"
+				}
+			},
+			"end": {
+				"identity": 7,
+				"labels": [
+					"Block"
+				],
+				"properties": {
+					"name": "Transmissiya",
+					"Name": "Transmissiya"
+				}
+			},
+			"segments": [
+				{
+					"start": {
+						"identity": 24,
+						"labels": [
+							"Block"
+						],
+						"properties": {
+							"name": "Electrika",
+							"Name": "Electrika"
+						}
+					},
+					"relationship": {
+						"identity": 35,
+						"start": 24,
+						"end": 7,
+						"type": "AGREGATE_WITH",
+						"properties": {
+
+						}
+					},
+					"end": {
+						"identity": 7,
+						"labels": [
+							"Block"
+						],
+						"properties": {
+							"name": "Transmissiya",
+							"Name": "Transmissiya"
+						}
+					}
+				}
+			],
+			"length": 1.0
+		}
+	},
+	{
+		"p": {
+			"start": {
+				"identity": 13,
+				"labels": [
+					"Block"
+				],
+				"properties": {
+					"name": "Dvigatel",
+					"Name": "Dvigatel"
+				}
+			},
+			"end": {
+				"identity": 7,
+				"labels": [
+					"Block"
+				],
+				"properties": {
+					"name": "Transmissiya",
+					"Name": "Transmissiya"
+				}
+			},
+			"segments": [
+				{
+					"start": {
+						"identity": 13,
+						"labels": [
+							"Block"
+						],
+						"properties": {
+							"name": "Dvigatel",
+							"Name": "Dvigatel"
+						}
+					},
+					"relationship": {
+						"identity": 18,
+						"start": 13,
+						"end": 7,
+						"type": "AGREGATE_WITH",
+						"properties": {
+
+						}
+					},
+					"end": {
+						"identity": 7,
+						"labels": [
+							"Block"
+						],
+						"properties": {
+							"name": "Transmissiya",
+							"Name": "Transmissiya"
+						}
+					}
+				}
+			],
+			"length": 1.0
+		}
+	},
+	{
+		"p": {
+			"start": {
+				"identity": 18,
+				"labels": [
+					"Block"
+				],
+				"properties": {
+					"name": "Hodovaia",
+					"Name": "Hodovaia"
+				}
+			},
+			"end": {
+				"identity": 7,
+				"labels": [
+					"Block"
+				],
+				"properties": {
+					"name": "Transmissiya",
+					"Name": "Transmissiya"
+				}
+			},
+			"segments": [
+				{
+					"start": {
+						"identity": 18,
+						"labels": [
+							"Block"
+						],
+						"properties": {
+							"name": "Hodovaia",
+							"Name": "Hodovaia"
+						}
+					},
+					"relationship": {
+						"identity": 17,
+						"start": 18,
+						"end": 7,
+						"type": "AGREGATE_WITH",
+						"properties": {
+
+						}
+					},
+					"end": {
+						"identity": 7,
+						"labels": [
+							"Block"
+						],
+						"properties": {
+							"name": "Transmissiya",
+							"Name": "Transmissiya"
+						}
+					}
+				}
+			],
+			"length": 1.0
+		}
+	},
+	{
+		"p": {
+			"start": {
+				"identity": 5,
+				"labels": [
+					"SparePart"
+				],
+				"properties": {
+					"name": "PMost",
+					"Price": 2000,
+					"Name": "PMost"
+				}
+			},
+			"end": {
+				"identity": 7,
+				"labels": [
+					"Block"
+				],
+				"properties": {
+					"name": "Transmissiya",
+					"Name": "Transmissiya"
+				}
+			},
+			"segments": [
+				{
+					"start": {
+						"identity": 5,
+						"labels": [
+							"SparePart"
+						],
+						"properties": {
+							"name": "PMost",
+							"Price": 2000,
+							"Name": "PMost"
+						}
+					},
+					"relationship": {
+						"identity": 15,
+						"start": 5,
+						"end": 7,
+						"type": "PART_OF",
+						"properties": {
+
+						}
+					},
+					"end": {
+						"identity": 7,
+						"labels": [
+							"Block"
+						],
+						"properties": {
+							"name": "Transmissiya",
+							"Name": "Transmissiya"
+						}
+					}
+				}
+			],
+			"length": 1.0
+		}
+	},
+	{
+		"p": {
+			"start": {
+				"identity": 6,
+				"labels": [
+					"SparePart"
+				],
+				"properties": {
+					"name": "Poluos",
+					"Price": 500,
+					"Name": "Poluos"
+				}
+			},
+			"end": {
+				"identity": 7,
+				"labels": [
+					"Block"
+				],
+				"properties": {
+					"name": "Transmissiya",
+					"Name": "Transmissiya"
+				}
+			},
+			"segments": [
+				{
+					"start": {
+						"identity": 6,
+						"labels": [
+							"SparePart"
+						],
+						"properties": {
+							"name": "Poluos",
+							"Price": 500,
+							"Name": "Poluos"
+						}
+					},
+					"relationship": {
+						"identity": 5,
+						"start": 6,
+						"end": 7,
+						"type": "PART_OF",
+						"properties": {
+
+						}
+					},
+					"end": {
+						"identity": 7,
+						"labels": [
+							"Block"
+						],
+						"properties": {
+							"name": "Transmissiya",
+							"Name": "Transmissiya"
+						}
+					}
+				}
+			],
+			"length": 1.0
+		}
+	},
+	{
+		"p": {
+			"start": {
+				"identity": 4,
+				"labels": [
+					"SparePart"
+				],
+				"properties": {
+					"name": "ZMost",
+					"Price": 2500,
+					"Name": "ZMost"
+				}
+			},
+			"end": {
+				"identity": 7,
+				"labels": [
+					"Block"
+				],
+				"properties": {
+					"name": "Transmissiya",
+					"Name": "Transmissiya"
+				}
+			},
+			"segments": [
+				{
+					"start": {
+						"identity": 4,
+						"labels": [
+							"SparePart"
+						],
+						"properties": {
+							"name": "ZMost",
+							"Price": 2500,
+							"Name": "ZMost"
+						}
+					},
+					"relationship": {
+						"identity": 4,
+						"start": 4,
+						"end": 7,
+						"type": "PART_OF",
+						"properties": {
+
+						}
+					},
+					"end": {
+						"identity": 7,
+						"labels": [
+							"Block"
+						],
+						"properties": {
+							"name": "Transmissiya",
+							"Name": "Transmissiya"
+						}
+					}
+				}
+			],
+			"length": 1.0
+		}
+	},
+	{
+		"p": {
+			"start": {
+				"identity": 3,
+				"labels": [
+					"SparePart"
+				],
+				"properties": {
+					"name": "Razdatka",
+					"Price": 1500,
+					"Name": "Razdatka"
+				}
+			},
+			"end": {
+				"identity": 7,
+				"labels": [
+					"Block"
+				],
+				"properties": {
+					"name": "Transmissiya",
+					"Name": "Transmissiya"
+				}
+			},
+			"segments": [
+				{
+					"start": {
+						"identity": 3,
+						"labels": [
+							"SparePart"
+						],
+						"properties": {
+							"name": "Razdatka",
+							"Price": 1500,
+							"Name": "Razdatka"
+						}
+					},
+					"relationship": {
+						"identity": 3,
+						"start": 3,
+						"end": 7,
+						"type": "PART_OF",
+						"properties": {
+
+						}
+					},
+					"end": {
+						"identity": 7,
+						"labels": [
+							"Block"
+						],
+						"properties": {
+							"name": "Transmissiya",
+							"Name": "Transmissiya"
+						}
+					}
+				}
+			],
+			"length": 1.0
+		}
+	},
+	{
+		"p": {
+			"start": {
+				"identity": 2,
+				"labels": [
+					"SparePart"
+				],
+				"properties": {
+					"name": "ZCardan",
+					"Price": 2500,
+					"Name": "ZCardan"
+				}
+			},
+			"end": {
+				"identity": 7,
+				"labels": [
+					"Block"
+				],
+				"properties": {
+					"name": "Transmissiya",
+					"Name": "Transmissiya"
+				}
+			},
+			"segments": [
+				{
+					"start": {
+						"identity": 2,
+						"labels": [
+							"SparePart"
+						],
+						"properties": {
+							"name": "ZCardan",
+							"Price": 2500,
+							"Name": "ZCardan"
+						}
+					},
+					"relationship": {
+						"identity": 2,
+						"start": 2,
+						"end": 7,
+						"type": "PART_OF",
+						"properties": {
+
+						}
+					},
+					"end": {
+						"identity": 7,
+						"labels": [
+							"Block"
+						],
+						"properties": {
+							"name": "Transmissiya",
+							"Name": "Transmissiya"
+						}
+					}
+				}
+			],
+			"length": 1.0
+		}
+	},
+	{
+		"p": {
+			"start": {
+				"identity": 1,
+				"labels": [
+					"SparePart"
+				],
+				"properties": {
+					"name": "PCardan",
+					"Price": 200,
+					"Name": "PCardan"
+				}
+			},
+			"end": {
+				"identity": 7,
+				"labels": [
+					"Block"
+				],
+				"properties": {
+					"name": "Transmissiya",
+					"Name": "Transmissiya"
+				}
+			},
+			"segments": [
+				{
+					"start": {
+						"identity": 1,
+						"labels": [
+							"SparePart"
+						],
+						"properties": {
+							"name": "PCardan",
+							"Price": 200,
+							"Name": "PCardan"
+						}
+					},
+					"relationship": {
+						"identity": 1,
+						"start": 1,
+						"end": 7,
+						"type": "PART_OF",
+						"properties": {
+
+						}
+					},
+					"end": {
+						"identity": 7,
+						"labels": [
+							"Block"
+						],
+						"properties": {
+							"name": "Transmissiya",
+							"Name": "Transmissiya"
+						}
+					}
+				}
+			],
+			"length": 1.0
+		}
+	},
+	{
+		"p": {
+			"start": {
+				"identity": 0,
+				"labels": [
+					"SparePart"
+				],
+				"properties": {
+					"name": "Sceplenie",
+					"Price": 1000,
+					"Name": "Sceplenie"
+				}
+			},
+			"end": {
+				"identity": 7,
+				"labels": [
+					"Block"
+				],
+				"properties": {
+					"name": "Transmissiya",
+					"Name": "Transmissiya"
+				}
+			},
+			"segments": [
+				{
+					"start": {
+						"identity": 0,
+						"labels": [
+							"SparePart"
+						],
+						"properties": {
+							"name": "Sceplenie",
+							"Price": 1000,
+							"Name": "Sceplenie"
+						}
+					},
+					"relationship": {
+						"identity": 0,
+						"start": 0,
+						"end": 7,
+						"type": "PART_OF",
+						"properties": {
+
+						}
+					},
+					"end": {
+						"identity": 7,
+						"labels": [
+							"Block"
+						],
+						"properties": {
+							"name": "Transmissiya",
+							"Name": "Transmissiya"
+						}
+					}
+				}
+			],
+			"length": 1.0
+		}
+	},
+	{
+		"p": {
+			"start": {
+				"identity": 24,
+				"labels": [
+					"Block"
+				],
+				"properties": {
+					"name": "Electrika",
+					"Name": "Electrika"
+				}
+			},
+			"end": {
+				"identity": 13,
+				"labels": [
+					"Block"
+				],
+				"properties": {
+					"name": "Dvigatel",
+					"Name": "Dvigatel"
+				}
+			},
+			"segments": [
+				{
+					"start": {
+						"identity": 24,
+						"labels": [
+							"Block"
+						],
+						"properties": {
+							"name": "Electrika",
+							"Name": "Electrika"
+						}
+					},
+					"relationship": {
+						"identity": 36,
+						"start": 24,
+						"end": 13,
+						"type": "AGREGATE_WITH",
+						"properties": {
+
+						}
+					},
+					"end": {
+						"identity": 13,
+						"labels": [
+							"Block"
+						],
+						"properties": {
+							"name": "Dvigatel",
+							"Name": "Dvigatel"
+						}
+					}
+				}
+			],
+			"length": 1.0
+		}
+	},
+	{
+		"p": {
+			"start": {
+				"identity": 18,
+				"labels": [
+					"Block"
+				],
+				"properties": {
+					"name": "Hodovaia",
+					"Name": "Hodovaia"
+				}
+			},
+			"end": {
+				"identity": 13,
+				"labels": [
+					"Block"
+				],
+				"properties": {
+					"name": "Dvigatel",
+					"Name": "Dvigatel"
+				}
+			},
+			"segments": [
+				{
+					"start": {
+						"identity": 18,
+						"labels": [
+							"Block"
+						],
+						"properties": {
+							"name": "Hodovaia",
+							"Name": "Hodovaia"
+						}
+					},
+					"relationship": {
+						"identity": 20,
+						"start": 18,
+						"end": 13,
+						"type": "AGREGATE_WITH",
+						"properties": {
+
+						}
+					},
+					"end": {
+						"identity": 13,
+						"labels": [
+							"Block"
+						],
+						"properties": {
+							"name": "Dvigatel",
+							"Name": "Dvigatel"
+						}
+					}
+				}
+			],
+			"length": 1.0
+		}
+	},
+	{
+		"p": {
+			"start": {
+				"identity": 7,
+				"labels": [
+					"Block"
+				],
+				"properties": {
+					"name": "Transmissiya",
+					"Name": "Transmissiya"
+				}
+			},
+			"end": {
+				"identity": 13,
+				"labels": [
+					"Block"
+				],
+				"properties": {
+					"name": "Dvigatel",
+					"Name": "Dvigatel"
+				}
+			},
+			"segments": [
+				{
+					"start": {
+						"identity": 7,
+						"labels": [
+							"Block"
+						],
+						"properties": {
+							"name": "Transmissiya",
+							"Name": "Transmissiya"
+						}
+					},
+					"relationship": {
+						"identity": 19,
+						"start": 7,
+						"end": 13,
+						"type": "AGREGATE_WITH",
+						"properties": {
+
+						}
+					},
+					"end": {
+						"identity": 13,
+						"labels": [
+							"Block"
+						],
+						"properties": {
+							"name": "Dvigatel",
+							"Name": "Dvigatel"
+						}
+					}
+				}
+			],
+			"length": 1.0
+		}
+	},
+	{
+		"p": {
+			"start": {
+				"identity": 12,
+				"labels": [
+					"SparePart"
+				],
+				"properties": {
+					"name": "Korpus",
+					"Price": 5500,
+					"Name": "Korpus"
+				}
+			},
+			"end": {
+				"identity": 13,
+				"labels": [
+					"Block"
+				],
+				"properties": {
+					"name": "Dvigatel",
+					"Name": "Dvigatel"
+				}
+			},
+			"segments": [
+				{
+					"start": {
+						"identity": 12,
+						"labels": [
+							"SparePart"
+						],
+						"properties": {
+							"name": "Korpus",
+							"Price": 5500,
+							"Name": "Korpus"
+						}
+					},
+					"relationship": {
+						"identity": 10,
+						"start": 12,
+						"end": 13,
+						"type": "PART_OF",
+						"properties": {
+
+						}
+					},
+					"end": {
+						"identity": 13,
+						"labels": [
+							"Block"
+						],
+						"properties": {
+							"name": "Dvigatel",
+							"Name": "Dvigatel"
+						}
+					}
+				}
+			],
+			"length": 1.0
+		}
+	},
+	{
+		"p": {
+			"start": {
+				"identity": 11,
+				"labels": [
+					"SparePart"
+				],
+				"properties": {
+					"name": "Turbina",
+					"Price": 2500,
+					"Name": "Turbina"
+				}
+			},
+			"end": {
+				"identity": 13,
+				"labels": [
+					"Block"
+				],
+				"properties": {
+					"name": "Dvigatel",
+					"Name": "Dvigatel"
+				}
+			},
+			"segments": [
+				{
+					"start": {
+						"identity": 11,
+						"labels": [
+							"SparePart"
+						],
+						"properties": {
+							"name": "Turbina",
+							"Price": 2500,
+							"Name": "Turbina"
+						}
+					},
+					"relationship": {
+						"identity": 9,
+						"start": 11,
+						"end": 13,
+						"type": "PART_OF",
+						"properties": {
+
+						}
+					},
+					"end": {
+						"identity": 13,
+						"labels": [
+							"Block"
+						],
+						"properties": {
+							"name": "Dvigatel",
+							"Name": "Dvigatel"
+						}
+					}
+				}
+			],
+			"length": 1.0
+		}
+	},
+	{
+		"p": {
+			"start": {
+				"identity": 10,
+				"labels": [
+					"SparePart"
+				],
+				"properties": {
+					"name": "Raspredval",
+					"Price": 1500,
+					"Name": "Raspredval"
+				}
+			},
+			"end": {
+				"identity": 13,
+				"labels": [
+					"Block"
+				],
+				"properties": {
+					"name": "Dvigatel",
+					"Name": "Dvigatel"
+				}
+			},
+			"segments": [
+				{
+					"start": {
+						"identity": 10,
+						"labels": [
+							"SparePart"
+						],
+						"properties": {
+							"name": "Raspredval",
+							"Price": 1500,
+							"Name": "Raspredval"
+						}
+					},
+					"relationship": {
+						"identity": 8,
+						"start": 10,
+						"end": 13,
+						"type": "PART_OF",
+						"properties": {
+
+						}
+					},
+					"end": {
+						"identity": 13,
+						"labels": [
+							"Block"
+						],
+						"properties": {
+							"name": "Dvigatel",
+							"Name": "Dvigatel"
+						}
+					}
+				}
+			],
+			"length": 1.0
+		}
+	},
+	{
+		"p": {
+			"start": {
+				"identity": 9,
+				"labels": [
+					"SparePart"
+				],
+				"properties": {
+					"name": "Kolenval",
+					"Price": 2500,
+					"Name": "Kolenval"
+				}
+			},
+			"end": {
+				"identity": 13,
+				"labels": [
+					"Block"
+				],
+				"properties": {
+					"name": "Dvigatel",
+					"Name": "Dvigatel"
+				}
+			},
+			"segments": [
+				{
+					"start": {
+						"identity": 9,
+						"labels": [
+							"SparePart"
+						],
+						"properties": {
+							"name": "Kolenval",
+							"Price": 2500,
+							"Name": "Kolenval"
+						}
+					},
+					"relationship": {
+						"identity": 7,
+						"start": 9,
+						"end": 13,
+						"type": "PART_OF",
+						"properties": {
+
+						}
+					},
+					"end": {
+						"identity": 13,
+						"labels": [
+							"Block"
+						],
+						"properties": {
+							"name": "Dvigatel",
+							"Name": "Dvigatel"
+						}
+					}
+				}
+			],
+			"length": 1.0
+		}
+	},
+	{
+		"p": {
+			"start": {
+				"identity": 8,
+				"labels": [
+					"SparePart"
+				],
+				"properties": {
+					"name": "Porshen",
+					"Price": 200,
+					"Name": "Porshen"
+				}
+			},
+			"end": {
+				"identity": 13,
+				"labels": [
+					"Block"
+				],
+				"properties": {
+					"name": "Dvigatel",
+					"Name": "Dvigatel"
+				}
+			},
+			"segments": [
+				{
+					"start": {
+						"identity": 8,
+						"labels": [
+							"SparePart"
+						],
+						"properties": {
+							"name": "Porshen",
+							"Price": 200,
+							"Name": "Porshen"
+						}
+					},
+					"relationship": {
+						"identity": 6,
+						"start": 8,
+						"end": 13,
+						"type": "PART_OF",
+						"properties": {
+
+						}
+					},
+					"end": {
+						"identity": 13,
+						"labels": [
+							"Block"
+						],
+						"properties": {
+							"name": "Dvigatel",
+							"Name": "Dvigatel"
+						}
+					}
+				}
+			],
+			"length": 1.0
+		}
+	},
+	{
+		"p": {
+			"start": {
+				"identity": 24,
+				"labels": [
+					"Block"
+				],
+				"properties": {
+					"name": "Electrika",
+					"Name": "Electrika"
+				}
+			},
+			"end": {
+				"identity": 18,
+				"labels": [
+					"Block"
+				],
+				"properties": {
+					"name": "Hodovaia",
+					"Name": "Hodovaia"
+				}
+			},
+			"segments": [
+				{
+					"start": {
+						"identity": 24,
+						"labels": [
+							"Block"
+						],
+						"properties": {
+							"name": "Electrika",
+							"Name": "Electrika"
+						}
+					},
+					"relationship": {
+						"identity": 37,
+						"start": 24,
+						"end": 18,
+						"type": "AGREGATE_WITH",
+						"properties": {
+
+						}
+					},
+					"end": {
+						"identity": 18,
+						"labels": [
+							"Block"
+						],
+						"properties": {
+							"name": "Hodovaia",
+							"Name": "Hodovaia"
+						}
+					}
+				}
+			],
+			"length": 1.0
+		}
+	},
+	{
+		"p": {
+			"start": {
+				"identity": 13,
+				"labels": [
+					"Block"
+				],
+				"properties": {
+					"name": "Dvigatel",
+					"Name": "Dvigatel"
+				}
+			},
+			"end": {
+				"identity": 18,
+				"labels": [
+					"Block"
+				],
+				"properties": {
+					"name": "Hodovaia",
+					"Name": "Hodovaia"
+				}
+			},
+			"segments": [
+				{
+					"start": {
+						"identity": 13,
+						"labels": [
+							"Block"
+						],
+						"properties": {
+							"name": "Dvigatel",
+							"Name": "Dvigatel"
+						}
+					},
+					"relationship": {
+						"identity": 21,
+						"start": 13,
+						"end": 18,
+						"type": "AGREGATE_WITH",
+						"properties": {
+
+						}
+					},
+					"end": {
+						"identity": 18,
+						"labels": [
+							"Block"
+						],
+						"properties": {
+							"name": "Hodovaia",
+							"Name": "Hodovaia"
+						}
+					}
+				}
+			],
+			"length": 1.0
+		}
+	},
+	{
+		"p": {
+			"start": {
+				"identity": 7,
+				"labels": [
+					"Block"
+				],
+				"properties": {
+					"name": "Transmissiya",
+					"Name": "Transmissiya"
+				}
+			},
+			"end": {
+				"identity": 18,
+				"labels": [
+					"Block"
+				],
+				"properties": {
+					"name": "Hodovaia",
+					"Name": "Hodovaia"
+				}
+			},
+			"segments": [
+				{
+					"start": {
+						"identity": 7,
+						"labels": [
+							"Block"
+						],
+						"properties": {
+							"name": "Transmissiya",
+							"Name": "Transmissiya"
+						}
+					},
+					"relationship": {
+						"identity": 16,
+						"start": 7,
+						"end": 18,
+						"type": "AGREGATE_WITH",
+						"properties": {
+
+						}
+					},
+					"end": {
+						"identity": 18,
+						"labels": [
+							"Block"
+						],
+						"properties": {
+							"name": "Hodovaia",
+							"Name": "Hodovaia"
+						}
+					}
+				}
+			],
+			"length": 1.0
+		}
+	},
+	{
+		"p": {
+			"start": {
+				"identity": 17,
+				"labels": [
+					"SparePart"
+				],
+				"properties": {
+					"name": "ZTormoz",
+					"Price": 3500,
+					"Name": "ZTormoz"
+				}
+			},
+			"end": {
+				"identity": 18,
+				"labels": [
+					"Block"
+				],
+				"properties": {
+					"name": "Hodovaia",
+					"Name": "Hodovaia"
+				}
+			},
+			"segments": [
+				{
+					"start": {
+						"identity": 17,
+						"labels": [
+							"SparePart"
+						],
+						"properties": {
+							"name": "ZTormoz",
+							"Price": 3500,
+							"Name": "ZTormoz"
+						}
+					},
+					"relationship": {
+						"identity": 14,
+						"start": 17,
+						"end": 18,
+						"type": "PART_OF",
+						"properties": {
+
+						}
+					},
+					"end": {
+						"identity": 18,
+						"labels": [
+							"Block"
+						],
+						"properties": {
+							"name": "Hodovaia",
+							"Name": "Hodovaia"
+						}
+					}
+				}
+			],
+			"length": 1.0
+		}
+	},
+	{
+		"p": {
+			"start": {
+				"identity": 16,
+				"labels": [
+					"SparePart"
+				],
+				"properties": {
+					"name": "PTormoz",
+					"Price": 2500,
+					"Name": "PTormoz"
+				}
+			},
+			"end": {
+				"identity": 18,
+				"labels": [
+					"Block"
+				],
+				"properties": {
+					"name": "Hodovaia",
+					"Name": "Hodovaia"
+				}
+			},
+			"segments": [
+				{
+					"start": {
+						"identity": 16,
+						"labels": [
+							"SparePart"
+						],
+						"properties": {
+							"name": "PTormoz",
+							"Price": 2500,
+							"Name": "PTormoz"
+						}
+					},
+					"relationship": {
+						"identity": 13,
+						"start": 16,
+						"end": 18,
+						"type": "PART_OF",
+						"properties": {
+
+						}
+					},
+					"end": {
+						"identity": 18,
+						"labels": [
+							"Block"
+						],
+						"properties": {
+							"name": "Hodovaia",
+							"Name": "Hodovaia"
+						}
+					}
+				}
+			],
+			"length": 1.0
+		}
+	},
+	{
+		"p": {
+			"start": {
+				"identity": 15,
+				"labels": [
+					"SparePart"
+				],
+				"properties": {
+					"name": "Amortizator",
+					"Price": 500,
+					"Name": "Amortizator"
+				}
+			},
+			"end": {
+				"identity": 18,
+				"labels": [
+					"Block"
+				],
+				"properties": {
+					"name": "Hodovaia",
+					"Name": "Hodovaia"
+				}
+			},
+			"segments": [
+				{
+					"start": {
+						"identity": 15,
+						"labels": [
+							"SparePart"
+						],
+						"properties": {
+							"name": "Amortizator",
+							"Price": 500,
+							"Name": "Amortizator"
+						}
+					},
+					"relationship": {
+						"identity": 12,
+						"start": 15,
+						"end": 18,
+						"type": "PART_OF",
+						"properties": {
+
+						}
+					},
+					"end": {
+						"identity": 18,
+						"labels": [
+							"Block"
+						],
+						"properties": {
+							"name": "Hodovaia",
+							"Name": "Hodovaia"
+						}
+					}
+				}
+			],
+			"length": 1.0
+		}
+	},
+	{
+		"p": {
+			"start": {
+				"identity": 14,
+				"labels": [
+					"SparePart"
+				],
+				"properties": {
+					"name": "Koleso",
+					"Price": 700,
+					"Name": "Koleso"
+				}
+			},
+			"end": {
+				"identity": 18,
+				"labels": [
+					"Block"
+				],
+				"properties": {
+					"name": "Hodovaia",
+					"Name": "Hodovaia"
+				}
+			},
+			"segments": [
+				{
+					"start": {
+						"identity": 14,
+						"labels": [
+							"SparePart"
+						],
+						"properties": {
+							"name": "Koleso",
+							"Price": 700,
+							"Name": "Koleso"
+						}
+					},
+					"relationship": {
+						"identity": 11,
+						"start": 14,
+						"end": 18,
+						"type": "PART_OF",
+						"properties": {
+
+						}
+					},
+					"end": {
+						"identity": 18,
+						"labels": [
+							"Block"
+						],
+						"properties": {
+							"name": "Hodovaia",
+							"Name": "Hodovaia"
+						}
+					}
+				}
+			],
+			"length": 1.0
+		}
+	}
+]
