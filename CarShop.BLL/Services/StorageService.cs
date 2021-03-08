@@ -30,7 +30,7 @@ namespace CarShop.BLL.Services
 
 		public async Task<IReadOnlyList<Block>> GetBlocks()
 		{
-			var result = (await _client
+			var blocksAndParts = (await _client
 				.Cypher
 				.Match("(p:SparePart)-[rel:PART_OF]->(b:Block)")
 				.Return((p, b) => new {
@@ -38,17 +38,17 @@ namespace CarShop.BLL.Services
 					Parts = p.CollectAs<SparePart>()
 				})
 				.ResultsAsync)
-				.ToList();
+				.First();
 
 			//TODO: Можно получить данные через IDriver из библиотеки Neo4j.Driver, но маппить придётся в ручную
 			//var driver = GraphDatabase.Driver($"{_graphConnection.Host}:{_graphConnection.Port}", AuthTokens.Basic(_graphConnection.User, _graphConnection.Password));
 			//var session = driver.AsyncSession(o => o.WithDatabase(_client.DefaultDatabase));
 			//var cursor = await session.RunAsync("MATCH (p:SparePart)-[rel:PART_OF]->(b:Block) RETURN p, b, rel");
 
-			var blocks = result.First().Blocks;
-			var spareParts = result.First().Parts;
+			var blocks = blocksAndParts.Blocks;
+			var spareParts = blocksAndParts.Parts;
 
-			var resultList = spareParts.Select((x, idx) => 
+			var result = spareParts.Select((x, idx) => 
 				{
 					x.Block = blocks.ElementAt(idx);
 					return x;
@@ -61,7 +61,7 @@ namespace CarShop.BLL.Services
 				})
 				.ToList();
 
-			return resultList;
+			return result;
 		}
 
 		public async Task<IReadOnlyList<SparePart>> GetParts()
