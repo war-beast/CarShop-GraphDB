@@ -26,7 +26,10 @@ namespace CarShop.Controllers
 			View(await _storageService.GetBlocks());
 
 		public async Task<IActionResult> Parts() => 
-			View(await _storageService.GetParts());
+			View(await _storageService.GetParts(string.Empty));
+
+		public async Task<IActionResult> SparePartList(string blockName) => 
+			PartialView("_SparePartList", await _storageService.GetParts(blockName));
 
 		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
 		public IActionResult Error()

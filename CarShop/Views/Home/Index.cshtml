@@ -1,38 +1,56 @@
 ﻿@model IReadOnlyList<Block>
 @{
-    ViewData["Title"] = "Пример использования графовой СУБД: Каталог автозапчастей.";
+	ViewData["Title"] = "Пример использования графовой СУБД: Каталог автозапчастей.";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Пример использования графовой СУБД: Neo4j</h1>
+	<h1 class="display-4">Пример использования графовой СУБД: Neo4j</h1>
 	<div class="container-fluid">
 		<div class="row">
 			<table class="table table-striped">
 				<thead>
-				<tr>
-					<th>Наименование</th>
-					<th>Запчасти</th>
-				</tr>
+					<tr>
+						<th>Наименование</th>
+						<th>Запчасти</th>
+						<th></th>
+					</tr>
 				</thead>
 				<tbody>
-				@foreach (var block in Model)
-				{
-					<tr>
-						<td><div class="text-left">@block.Name</div></td>
-						<td>
-							<ul>
-								@foreach (var part in block.Parts)
-								{
-									<li>
-										@part.Name - $@part.Price
-									</li>
-								}
-							</ul>
-						</td>
-					</tr>
-				}
+					@foreach (var block in Model)
+					{
+						<tr>
+							<td><div class="text-left">@block.Name</div></td>
+							<td>
+								<ul>
+									@foreach (var part in block.Parts)
+									{
+										<li>
+											@part.Name - $@part.Price
+										</li>
+									}
+								</ul>
+							</td>
+							<td>
+								<a asp-controller="Home" asp-action="SparePartList" asp-route-blockName="@block.Name" title="Запчасти" class="dialog">в модальном окне</a>
+							</td>
+						</tr>
+					}
 				</tbody>
 			</table>
 		</div>
 	</div>
 </div>
+
+@section scripts{
+	<script>
+		$(document).ready(function () {
+			$(".dialog").click(function (e) {
+				e.preventDefault();
+				$("#contentDialog .modal-title").html($(this).attr("title"));
+				$("#contentDialog .modal-body").html("Загрузка...");
+				$("#contentDialog .modal-body").load($(this).attr("href"));
+				$("#contentDialog").modal("show");
+			});
+		});
+	</script>
+}

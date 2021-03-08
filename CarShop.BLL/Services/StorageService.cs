@@ -5,6 +5,7 @@ using Neo4jClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 
 namespace CarShop.BLL.Services
@@ -75,9 +76,36 @@ namespace CarShop.BLL.Services
 			return result;
 		}
 
-		public async Task<IReadOnlyList<SparePart>> GetParts()
+		public async Task<IReadOnlyList<SparePart>> GetParts(string blockName)
 		{
-			throw new NotSupportedException();
+			var searchCondition = string.IsNullOrWhiteSpace(blockName)
+				? "-[:PART_OF]->(b:Block)"
+				: $"-[:PART_OF]->(b:Block {{Name: '{blockName}'}})";
+
+			var blocksAndParts = (await _client
+					.Cypher
+					.Match($"(p:SparePart){searchCondition}")
+					.Return((p, b) => new {
+						Blocks = b.CollectAs<Block>(),
+						Parts = p.CollectAs<SparePart>()
+					})
+					.ResultsAsync)
+				.First();
+
+			var blocks = blocksAndParts.Blocks;
+			var spareParts = blocksAndParts.Parts;
+
+			var result = spareParts.Select((p, idx) =>
+				{
+					p.Block = new Block
+					{
+						Name = blocks.ElementAt(idx).Name
+					};
+					return p;
+				})
+				.ToList();
+
+			return result;
 		}
 	}
 }

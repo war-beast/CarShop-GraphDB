@@ -8,6 +8,6 @@ namespace CarShop.BLL.Interfaces
 	{
 		Task<IReadOnlyList<Block>> GetBlocks();
 
-		Task<IReadOnlyList<SparePart>> GetParts();
+		Task<IReadOnlyList<SparePart>> GetParts(string blockName);
 	}
 }

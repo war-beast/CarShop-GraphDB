@@ -1,0 +1,25 @@
+﻿@model IReadOnlyList<SparePart>
+
+<div class="table-responsive">
+	<table class="table">
+		<tr>
+			<th>
+				Наименование
+			</th>
+			<th>
+				Цена
+			</th>
+		</tr>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@item.Name
+				</td>
+				<td>
+					@item.Price
+				</td>
+			</tr>
+		}
+	</table>
+</div>
