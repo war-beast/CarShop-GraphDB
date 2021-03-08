@@ -43,7 +43,18 @@ namespace CarShop.BLL.Services
 			//TODO: Можно получить данные через IDriver из библиотеки Neo4j.Driver, но маппить придётся в ручную
 			//var driver = GraphDatabase.Driver($"{_graphConnection.Host}:{_graphConnection.Port}", AuthTokens.Basic(_graphConnection.User, _graphConnection.Password));
 			//var session = driver.AsyncSession(o => o.WithDatabase(_client.DefaultDatabase));
-			//var cursor = await session.RunAsync("MATCH (p:SparePart)-[rel:PART_OF]->(b:Block) RETURN p, b, rel");
+			//var cursor = await session.RunAsync("MATCH (p:SparePart)-[rel:PART_OF]->(b:Block) RETURN p.Name as partName, b.Name as blockName, p.Price as price");
+			//var result = await cursor.ToListAsync(x => new SparePart
+			//{
+			//	Name = x["partName"].As<string>(),
+			//	Price = x["price"].As<decimal>(),
+			//  Block = new Block{
+			//		Name = x["blockName"].As<string>()
+			//  }
+			//});
+
+			//await session.CloseAsync();
+			//await graphDriver.CloseAsync();
 
 			var blocks = blocksAndParts.Blocks;
 			var spareParts = blocksAndParts.Parts;
