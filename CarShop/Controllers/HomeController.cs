@@ -13,13 +13,17 @@ namespace CarShop.Controllers
 
 		private readonly ILogger<HomeController> _logger;
 		private readonly IStorageService _storageService;
+		private readonly ICommentsService _commentsService;
 
 		#endregion
 
-		public HomeController(ILogger<HomeController> logger, IStorageService storageService)
+		public HomeController(ILogger<HomeController> logger, 
+			IStorageService storageService, 
+			ICommentsService commentsService)
 		{
 			_logger = logger;
 			_storageService = storageService;
+			_commentsService = commentsService;
 		}
 
 		public async Task<IActionResult> Index() => 
@@ -37,6 +41,9 @@ namespace CarShop.Controllers
 			};
 			return PartialView("_SparePartList", model);
 		}
+
+		public IActionResult Commentaries() =>
+			View(_commentsService.GetAll());
 
 		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
 		public IActionResult Error()
