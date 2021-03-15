@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using CarShop.BLL.Interfaces;
+using CarShop.BLL.Models;
 
 namespace CarShop.Controllers
 {
@@ -44,6 +45,13 @@ namespace CarShop.Controllers
 
 		public IActionResult Commentaries() =>
 			View(_commentsService.GetAll());
+
+		[HttpPost]
+		public async Task<IActionResult> AddComment(PostComment newComment)
+		{
+			var result = await _commentsService.SaveComment(newComment);
+			return RedirectToAction("Commentaries");
+		}
 
 		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
 		public IActionResult Error()

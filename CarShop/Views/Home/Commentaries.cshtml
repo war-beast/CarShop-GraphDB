@@ -6,16 +6,33 @@
 <div class="container">
 	<h1>@ViewBag.Title</h1>
 
+	<div class="row">
+		<form asp-action="AddComment" asp-controller="Home" method="post" class="w-100">
+			<div>
+				<h3>Добавить отзыв</h3>
+				<label>Заголовок:</label>
+				<input class="form-control w-100" type="text" name="title" id="title"><br />
+				<label>Текст:</label>
+				<textarea class="form-control w-100" name="content" id="content"></textarea><br />
+				<label>Теги (через запятую):</label>
+				<input class="form-control w-100" name="tags" id="tags" /><br />
+				<button type="submit" class="btn btn-primary">Отправить</button>
+			</div>
+		</form>
+	</div>
+
 	@foreach (var comment in Model)
 	{
-		<div class="row">
+		<div class="row d-block">
 			<h2>@comment.Title</h2>
-			<div>@Html.Raw(comment.Content)</div>
-			<div>
-				Теги: 
+			<div class="row">
+				@Html.Raw(comment.Content)
+			</div>
+			<div class="row d-flex align-content-center">
+				<span>Теги:</span>
 				@foreach (var tag in comment.Tags)
 				{
-					<span class="badge badge-primary">@tag</span>
+					<span class="badge badge-primary m-1">@tag</span>
 				}
 			</div>
 		</div>
