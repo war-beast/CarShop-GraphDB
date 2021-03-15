@@ -24,20 +24,14 @@ namespace CarShop.BLL.Services
 
 		public IReadOnlyCollection<Comment> GetAll()
 		{
-			var cm = _elasticClient
+			var response = _elasticClient
 				.Search<Comment>(c =>
 				c.Query(q =>
 					q.MatchAll()
 				)
 			);
 
-			var comments = _elasticClient
-				.Search<Comment>(c =>
-					c.Query(q =>
-						q.MatchAll()
-					)
-				)
-				.Documents;
+			var comments = response.Documents;
 
 			return comments;
 		}
