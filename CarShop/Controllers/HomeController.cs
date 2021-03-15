@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using CarShop.BLL.Interfaces;
+using CarShop.BLL.Models;
 
 namespace CarShop.Controllers
 {
@@ -13,13 +14,17 @@ namespace CarShop.Controllers
 
 		private readonly ILogger<HomeController> _logger;
 		private readonly IStorageService _storageService;
+		private readonly ICommentsService _commentsService;
 
 		#endregion
 
-		public HomeController(ILogger<HomeController> logger, IStorageService storageService)
+		public HomeController(ILogger<HomeController> logger, 
+			IStorageService storageService, 
+			ICommentsService commentsService)
 		{
 			_logger = logger;
 			_storageService = storageService;
+			_commentsService = commentsService;
 		}
 
 		public async Task<IActionResult> Index() => 
@@ -36,6 +41,16 @@ namespace CarShop.Controllers
 				SpareParts = await _storageService.GetParts(blockName)
 			};
 			return PartialView("_SparePartList", model);
+		}
+
+		public IActionResult Commentaries() =>
+			View(_commentsService.GetAll());
+
+		[HttpPost]
+		public async Task<IActionResult> AddComment(PostComment newComment)
+		{
+			var result = await _commentsService.SaveComment(newComment);
+			return RedirectToAction("Commentaries");
 		}
 
 		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
