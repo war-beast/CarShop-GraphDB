@@ -1,4 +1,3 @@
-using CarShop.BLL.Models;
 using CarShop.Data;
 using CarShop.Extensions;
 using Microsoft.AspNetCore.Builder;
@@ -10,6 +9,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Neo4jClient;
 using System;
+using Elasticsearch.Net;
+using Nest;
+using GraphConnection = CarShop.BLL.Models.GraphConnection;
 
 namespace CarShop
 {
@@ -36,6 +38,11 @@ namespace CarShop
 			var neo4JClient = new GraphClient(new Uri($"{Configuration.GetSection("GraphConnection:Host").Value}:{Configuration.GetSection("GraphConnection:Port").Value}"), Configuration.GetSection("GraphConnection:User").Value, Configuration.GetSection("GraphConnection:Password").Value);
 			neo4JClient.ConnectAsync().Wait();
 			services.AddSingleton<IGraphClient>(neo4JClient);
+
+			var pool = new SingleNodeConnectionPool(new Uri(Configuration.GetSection("ElasticSearch:BaseUrl").Value));
+			var settings = new ConnectionSettings(pool).DefaultIndex("carshop");
+			var client = new ElasticClient(settings);
+			services.AddSingleton(client);
 
 			services.AddServices(lifetime: ServiceLifetime.Transient);
 
