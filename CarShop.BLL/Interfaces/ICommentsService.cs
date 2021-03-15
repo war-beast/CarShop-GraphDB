@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace CarShop.BLL.Interfaces
 {
-	public interface ICommentsService
+	public interface ICommentsService : IService
 	{
 		IReadOnlyCollection<Comment> GetAll();
 	}

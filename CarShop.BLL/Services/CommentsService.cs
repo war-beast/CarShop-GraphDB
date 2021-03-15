@@ -22,13 +22,24 @@ namespace CarShop.BLL.Services
 
 		#endregion
 
-		public IReadOnlyCollection<Comment> GetAll() =>
-			_elasticClient
-				.Search<Comment>(c => 
-					c.Query(q => 
+		public IReadOnlyCollection<Comment> GetAll()
+		{
+			var cm = _elasticClient
+				.Search<Comment>(c =>
+				c.Query(q =>
+					q.MatchAll()
+				)
+			);
+
+			var comments = _elasticClient
+				.Search<Comment>(c =>
+					c.Query(q =>
 						q.MatchAll()
 					)
 				)
 				.Documents;
+
+			return comments;
+		}
 	}
 }

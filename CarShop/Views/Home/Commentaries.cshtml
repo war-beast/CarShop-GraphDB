@@ -3,3 +3,21 @@
 	ViewData["Title"] = "Комментарии";
 }
 
+<div class="container">
+	<h1>@ViewBag.Title</h1>
+
+	@foreach (var comment in Model)
+	{
+		<div class="row">
+			<h2>@comment.Title</h2>
+			<div>@Html.Raw(comment.Content)</div>
+			<div>
+				Теги: 
+				@foreach (var tag in comment.Tags)
+				{
+					<span class="badge badge-primary">@tag</span>
+				}
+			</div>
+		</div>
+	}
+</div>
