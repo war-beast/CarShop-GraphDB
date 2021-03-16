@@ -1,0 +1,344 @@
+{
+	"info": {
+		"_postman_id": "0af87797-7b86-4f86-8a98-9ef3f579e19b",
+		"name": "ИПР",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Проверка ElasticSearch",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9200",
+					"host": [
+						"localhost"
+					],
+					"port": "9200"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание индекса",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Хороший магазин с приятными менеджерами.\",\r\n    \"content\": \"<p>Хочу поблагодарить за хороших сотрудников в офисе. Сегодня покупал масляный фильтр и получил предпраздничное настроение в беседе с менеджерами и еще и скидку) Приятно! С наступающими и хороших продаж в новом году!!!)<p>\",\r\n    \"tags\": [\r\n        \"запчасти\",\r\n        \"респект\"\r\n    ],\r\n    \"published_at\": \"2021-03-14T20:44:45+00:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9200/carshop/review/2?pretty",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"carshop",
+						"review",
+						"2"
+					],
+					"query": [
+						{
+							"key": "pretty",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Просмотр маппингов индекса",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9200/carshop/_mapping?pretty",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"carshop",
+						"_mapping"
+					],
+					"query": [
+						{
+							"key": "pretty",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение документа по id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9200/carshop/review/2?pretty",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"carshop",
+						"review",
+						"2"
+					],
+					"query": [
+						{
+							"key": "pretty",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение содержимого документа по id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9200/carshop/review/2/_source?pretty",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"carshop",
+						"review",
+						"2",
+						"_source"
+					],
+					"query": [
+						{
+							"key": "pretty",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Сортировка по дате",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"size\": 3,\r\n    \"_source\": [\r\n        \"title\",\r\n        \"published_at\"\r\n    ],\r\n    \"sort\": [\r\n        {\r\n            \"published_at\": \"desc\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9200/carshop/review/_search?pretty",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"carshop",
+						"review",
+						"_search"
+					],
+					"query": [
+						{
+							"key": "pretty",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Поиск по тегам",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_source\": [\r\n        \"title\",\r\n        \"tags\"\r\n    ],\r\n    \"query\": {\r\n        \"bool\": {\r\n            \"filter\": [\r\n                {\r\n                    \"term\": {\r\n                        \"tags\": \"респект\"\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9200/carshop/review/_search?pretty",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"carshop",
+						"review",
+						"_search"
+					],
+					"query": [
+						{
+							"key": "pretty",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Полнотекстовый поиск",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_source\": false,\r\n    \"query\": {\r\n        \"match\": {\r\n            \"content\": \"оригинал\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9200/carshop/review/_search?pretty",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"carshop",
+						"review",
+						"_search"
+					],
+					"query": [
+						{
+							"key": "pretty",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удаление документа по id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:9200/carshop/review/iU_9NngBUh1pFTR0Y5Bk",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"carshop",
+						"review",
+						"iU_9NngBUh1pFTR0Y5Bk"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Работа русского анализатора текста",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"analyzer\": \"russian\",\r\n    \"text\": \"Хочу поблагодарить за хороших сотрудников в офисе. Сегодня покупал масляный фильтр и получил предпраздничное настроение в беседе с менеджерами и еще и скидку) Приятно! С наступающими и хороших продаж в новом году\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9200/carshop/_analyze?pretty",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"carshop",
+						"_analyze"
+					],
+					"query": [
+						{
+							"key": "pretty",
+							"value": null
+						},
+						{
+							"key": "_source",
+							"value": "content",
+							"disabled": true
+						},
+						{
+							"key": "text",
+							"value": "Хочу поблагодарить за хороших сотрудников в офисе. Сегодня покупал масляный фильтр и получил предпраздничное настроение в беседе с менеджерами и еще и скидку) Приятно! С наступающими и хороших продаж в новом году",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить все документы",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9200/carshop/review/_search?pretty",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"carshop",
+						"review",
+						"_search"
+					],
+					"query": [
+						{
+							"key": "pretty",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
