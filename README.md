@@ -5,3 +5,6 @@
 Модель базы данных в виде JSON находится в папке: \CarShop\Assets\database-model.json
 
 ![img](https://github.com/war-beast/CarShop-GraphDB/blob/master/CarShop/Assets/scr.png)
+
+Отзывы клиентов магазина работают на Elastic Search 7.11
+Примеры запросов в папке: \CarShop\Assets\
